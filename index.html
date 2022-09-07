@@ -3,32 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        a {
-            display: block;
-            width: 230px;
-            height: 40px;
-            background-color: #66512c;
-            line-height: 40px;
-            text-indent: 2em;
-            text-decoration: none;
-            color: #b9def0;
+        body {
+            background-color: whitesmoke;
         }
 
-        a:hover {
-            background-color: #eb9316;
+        .box {
+            width: 1204px;
+            height: 380px;
+            margin: 100px auto;
+            background: white;
+        }
+
+        .box1, .box2, .box3, .box4 {
+            float: left;
+            width: 300px;
+            height: 380px;
+            background-color: white;
+            border: 1px solid whitesmoke;
+            margin-left: -1px;
+        }
+
+        .box img {
+            width: 100%;
+        }
+
+        .p1 {
+            height: 70px;
+            padding: 0 21px;
+            margin-top: 20px;
+            font-size: 16px;
+            text-indent: 2em;
+        }
+
+        .p2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c0a16b;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        .box1:hover, .box2:hover, .box3:hover, .box4:hover {
+            position: relative;
+            box-shadow: 1px 1px 10px 1px gray;
+            border: 1px solid orange;
+            transform: scale(1.01);
         }
     </style>
-    <title>Title</title>
+    <title>小姐姐</title>
 </head>
 <body>
-<div>
-    <a href="#">手机&nbsp;电话卡</a>
-    <a href="#">电视&nbsp;盒子</a>
-    <a href="#">笔记本&nbsp;平板</a>
-    <a href="#">出行&nbsp;穿戴</a>
-    <a href="#">智能&nbsp;路由器</a>
-    <a href="#">健康&nbsp;儿童</a>
-    <a href="#">耳机&nbsp;音响</a>
+<div class="box">
+    <div class="box1">
+        <img src="../../images/hao2.jpg" alt="小姐姐">
+        <p class="p1">长长的头发，嫩白的皮肤，苗条的身材，天生丽质与智慧于一身的乖乖女，最优秀的是不粘人。</p>
+        <p class="p2">漂亮小姐姐<em>|</em>颜值：95分</p>
+    </div>
+    <div class="box2">
+        <img src="../../images/hao1.jpg" alt="小姐姐">
+        <p class="p1">上帝看后吩咐说：给最善良、最能⼲、最聪明、最美丽的⼥⼈发个短信吧，让她永远年轻快乐幸福漂亮！</p>
+        <p class="p2">温柔小姐姐<em>|</em>颜值：90分</p>
+    </div>
+    <div class="box3">
+        <img src="../../images/小姐姐3.jpg" alt="小姐姐">
+        <p class="p1">她眸光流转，会⼼⼀笑，胜过千万句对⽩；她真情传递，脉脉不语，胜过万语千⾔。</p>
+        <p class="p2">清纯小姐姐<em>|</em>颜值：97分</p>
+    </div>
+    <div class="box4">
+        <img src="../../images/小姐姐4.jpg" alt="小姐姐">
+        <p class="p1">永远有一颗清醒的大脑，眼睛坚定有神。她能“吃鸡”能“王者”，上得了厅堂下得了厨房。</p>
+        <p class="p2">高冷小姐姐<em>|</em>颜值：93分</p>
+    </div>
 </div>
 </body>
 </html>
