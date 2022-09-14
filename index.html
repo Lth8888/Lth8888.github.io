@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>学习之旅</title>
     <style>
         body {
             background-color: whitesmoke;
@@ -39,13 +38,13 @@
 
         .box2 {
             width: 1088px;
-            height: 600px;
+            height: 370px;
             margin: 0 auto;
         }
         .lth1, .lth2, .lth3, .lth4 {
             float: left;
             width: 273px;
-            height: 360px;
+            height: 350px;
             background-color: white;
             border: 1px solid whitesmoke;
             margin-left: -1px;
@@ -73,6 +72,29 @@
             box-shadow: 1px 1px 10px 1px gray;
             border: 1px solid orange;
             transform: scale(1.01);
+        }
+
+        .box3{
+            width: 1088px;
+            margin: 0 auto;
+        }
+        video {
+            width: 635px;
+            float: left;
+        }
+        #lth {
+            height: 358px;
+        }
+        #aa {
+            text-align: center;
+            font-size: 45px;
+            font-weight: bold;
+            line-height: 100px;
+            background-color: #eb9316;
+        }
+
+        #aaa{
+            font-size: 24px;
         }
     </style>
 
@@ -187,7 +209,7 @@
         </div>
         <div class="lth2">
             <img src="../../images/bc2.webp" alt="">
-            <p class="p1">Java是一门面向对象的编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征...</p>
+            <p class="p1">Java是一门面向对象的编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和...</p>
             <p class="p2">Java之父：James Gosling</p>
         </div>
         <div class="lth3">
@@ -201,5 +223,49 @@
             <p class="p2">JavaScript之父：BrendanEich</p>
         </div>
     </div>
+
+    <div class="box3">
+        <video src="../../videos/video1.mp4" controls="controls"></video>
+        <div class="row">
+            <div class="col-md-5">
+                <table id="lth" class="table table-bordered table-hover table-striped">
+                    <tr>
+                        <th id="aa" colspan="3" class="lead">学习计划</th>
+                    </tr>
+                    <tr id="aaa" class="info">
+                        <th>星期</th>
+                        <th>上午</th>
+                        <th>下午</th>
+                    </tr>
+                    <tr class="success">
+                        <td>星期一</td>
+                        <td>Java程序设计</td>
+                        <td>数据结构</td>
+                    </tr>
+                    <tr class="info">
+                        <td>星期二</td>
+                        <td>Java程序设计</td>
+                        <td>计算机网络</td>
+                    </tr>
+                    <tr class="success">
+                        <td>星期三</td>
+                        <td>Web前端基础</td>
+                        <td>Java程序设计</td>
+                    </tr>
+                    <tr class="info">
+                        <td>星期四</td>
+                        <td>操作系统</td>
+                        <td>软件工程</td>
+                    </tr>
+                    <tr class="success">
+                        <td>星期五</td>
+                        <td>Mysql数据库</td>
+                        <td>计算机组成原理</td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+    </div>
+
 </body>
 </html>
