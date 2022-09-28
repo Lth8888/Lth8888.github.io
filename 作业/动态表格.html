@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-size: 2em;
+        }
+
+        #header {
+            border: 1px solid chartreuse;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        th {
+            border: 1px solid chartreuse;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid chartreuse;
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: center;
+        }
+
+        table {
+            background-color: yellow;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            height: 30px;
+        }
+
+        input[type="button"] {
+            font-size: 1em;
+        }
+
+        #lth1 {
+            float: left;
+            width: 40%;
+        }
+
+        #add {
+            font-size: 1em;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="lth1">
+    <table>
+        <tr>
+            <th id="header" colspan="4">学生信息表</th>
+        </tr>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三丰</td>
+            <td>男</td>
+            <td><a href="#" onclick="delTr(this);">删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>吕四娘</td>
+            <td>女</td>
+            <td><a href="javascript:void(0);" onclick="delTr(this);">删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>杨雪</td>
+            <td>女</td>
+            <td><a href="javascript:void(0);" onclick="delTr(this);">删除</a></td>
+        </tr>
+    </table>
+
+</div>
+<div id="lth2">
+    <input id="id" type="text" placeholder="请输入编号"><br/>
+    <input id="name" type="text" placeholder="请输入姓名"><br/>
+    <input id="gender" type="text" placeholder="请输入性别"><br/><br/>
+    <input id="add" type="button" value="添加">
+
+    <input type="button" value="下一页" id="gotoHtml">
+</div>
+
+<script>
+    //获取按钮
+    document.getElementById("add").onclick = function () {
+        //获取文本框内容
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let gender = document.getElementById("gender").value;
+
+        // //创建td，赋值td的标签体
+        // let td_id=document.createElement("td");
+        // let text_id=document.createTextNode(id);
+        // td_id.appendChild(text_id);
+        //
+        // let td_name=document.createElement("td");
+        // let text_name=document.createTextNode(name);
+        // td_name.appendChild(text_name);
+        //
+        // let td_gender=document.createElement("td");
+        // let text_gender=document.createTextNode(gender);
+        // td_gender.appendChild(text_gender);
+        //
+        // let td_a=document.createElement("td");
+        // let ele_a=document.createElement("a");
+        // ele_a.setAttribute("href","javascript:void(0);");
+        // ele_a.setAttribute("onclick","delTr(this);");
+        // let text_a=document.createTextNode("删除");
+        // ele_a.appendChild(text_a);
+        // td_a.appendChild(ele_a);
+        //
+        // //创建tr
+        // let tr=document.createElement("tr");
+        // tr.appendChild(td_id);
+        // tr.appendChild(td_name);
+        // tr.appendChild(td_gender);
+        // tr.appendChild(td_a);
+        // //获取表格
+        // let table=document.getElementsByTagName("table")[0];
+        // table.appendChild(tr);
+
+        let table = document.getElementsByTagName("table")[0];
+        table.innerHTML += "<tr>\n" +
+            "                <td>" + id + "</td>\n" +
+            "                <td>" + name + "</td>\n" +
+            "                <td>" + gender + "</td>\n" +
+            "                <td><a href=\"javascript:void(0);\" onclick=\"delTr(this);\">删除</a></td>\n" +
+            "            </tr>"
+    }
+
+
+    function delTr(obj) {
+        let table = obj.parentNode.parentNode.parentNode;
+        let tr = obj.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+
+    let gotoHtml = document.getElementById("gotoHtml");
+    gotoHtml.onclick = function () {
+        open("轮播图.html");
+    }
+</script>
+</body>
+</html>
