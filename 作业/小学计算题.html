@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        body{
+            background-color: #8a6d3b;
+        }
+        .box {
+            font-size: 34px;
+            width: 530px;
+            height: 240px;
+            background-color: white;
+            margin: 100px auto;
+        }
+        .box1,.boxAdd,.box2,.boxEquals,.question{
+            display: inline-block;
+            width: 120px;
+            height: 60px;
+            border-radius: 60px;
+            background-color: #eb9316;
+            text-align: center;
+            line-height: 60px;
+        }
+        .boxAdd,.boxEquals {
+            width: 60px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 60px;
+            color: #3cadeb;
+        }
+        input[type="button"] {
+            border-style: none;
+            border-radius: 60px;
+            width: 124px;
+            height: 60px;
+            background-color: #8a6d3b;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #e4b9b9;
+        }
+        input[type="button"]:hover {
+            background-color: #c0a16b;
+        }
+        input[id='flush'] {
+            width: 248px;
+            background-color: #67b168;
+            margin-left: 135px;
+            letter-spacing: 10px;
+        }
+        input[id='flush']:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <title>小学计算题</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="boxAdd">+</div>
+        <div class="box2"></div>
+        <div class="boxEquals">=</div>
+        <div class="question">?</div>
+        <div>
+            <input type="button" id="btn1" value="A.">
+            <input type="button" id="btn2" value="B.">
+            <input type="button" id="btn3" value="C.">
+            <input type="button" id="btn4" value="D.">
+            <input type="button" value="刷 新" id="flush">
+        </div>
+    </div>
+    <script>
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+
+        let random1 = getRandom(1,10);
+        let random2 = getRandom(1,10);
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+        box1.innerHTML+=random1;
+        box2.innerHTML+=random2;
+        let random = getRandom(1,4);
+        let btn = document.getElementById('btn'+random);
+        btn.value+=(random1+random2);
+
+        //生成不重复的随机数
+        let num = [];
+        for(let i = 0; i < 4; i++){
+            num[i] = getRandom(1,20);
+            for(let j = 0; j < i; j++){
+                if(num[i] === num[j] || num[i] === (random1+random2)){
+                    i--;
+                }
+            }
+        }
+
+
+        for (let i = 1; i <= 4; i++) {
+            if (i!==random){
+                document.getElementById('btn'+i).value+=num[i-1];
+            }
+        }
+        btn.addEventListener('click',function () {
+            alert('恭喜你，答对了!!!');
+        });
+        for (let i = 1; i <= 4; i++) {
+            if (i!==random){
+                document.getElementById('btn'+i).addEventListener('click',function () {
+                    alert('不好意思，你答错了。');
+                });
+            }
+        }
+        let flush = document.getElementById("flush");
+        flush.onclick = function () {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
