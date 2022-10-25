@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url(../../images/npy5.jpg) center top;
+        }
+        .baidu{
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+        }
+        .baidu li{
+            list-style: none;
+            float: left;
+            margin: 0 1px;
+        }
+        .baidu img{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="baidu">
+    <li><img src="../../images/npy5.jpg" alt=""></li>
+    <li><img src="../../images/npy6.jpg" alt=""></li>
+    <li><img src="../../images/npy2.jpg" alt=""></li>
+    <li><img src="../../images/npy4.jpg" alt=""></li>
+</ul>
+<script>
+    let img = document.querySelector('.baidu').querySelectorAll('img');
+    for (let i = 0; i < img.length; i++) {
+        img[i].onclick = function () {
+            document.body.style.backgroundImage = 'url(' + this.src + ')';
+        }
+    }
+</script>
+</body>
+</html>
+
