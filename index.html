@@ -1,278 +1,127 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>学习之旅</title>
+    <meta charset="UTF-8">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         body {
-            background-color: whitesmoke;
+            background-color: #000000;
+            min-height: 98vh;
+            perspective: 1500px;
+        }
+
+        div#bgDIV {
+            width: 100vw;
+            height: 98vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
         .box {
-            width: 1088px;
-            height: 600px;
-            margin: 0 auto;
-            overflow: hidden;
+            width: 1015px;
+            height: 670px;
+            background-color: #222222;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px #ddd;
+            opacity: 0.7;
         }
-        .box .left{
-            float: left;
-        }
-        .box .left a {
-            display: block;
-            width: 230px;
-            height: 40px;
-            background-color: #66512c;
-            line-height: 40px;
-            text-indent: 2em;
-            text-decoration: none;
-            color: #b9def0;
-        }
-
-        .box .left a:hover {
-            background-color: #eb9316;
-        }
-        
-        .box .right img{
-            width: 858px;
-        }
-
-        .box2 {
-            width: 1090px;
-            height: 350px;
-            margin: 0 auto;
-        }
-        .lth1, .lth2, .lth3, .lth4 {
-            float: left;
-            width: 273px;
-            height: 350px;
-            background-color: white;
-            border: 1px solid whitesmoke;
-            margin-left: -1px;
-        }
-        .box2 img {
-            width: 100%;
-            height: 180px;
-        }
-        .p1 {
-            padding: 0 21px;
-            margin-top: 20px;
-            font-size: 14px;
-            text-indent: 2em;
-        }
-
-        .p2 {
-            text-align: center;
-            font-size: 17px;
+        ul li {
+            list-style: none;
             font-weight: bold;
-            color: #c0a16b;
-        }
-
-        .lth1:hover, .lth2:hover, .lth3:hover, .lth4:hover {
-            position: relative;
-            box-shadow: 1px 1px 10px 1px gray;
-            border: 1px solid orange;
-            transform: scale(1.01);
-        }
-
-        .box3{
-            width: 1088px;
-            margin: 0 auto;
-            height: 320px;
-            background-color: #5e5e5e;
-            overflow: hidden;
-        }
-        video {
-            float: left;
-            width: 627px;
-        }
-        #lth {
-            float: left;
-            width: 461px;
-        }
-        #aa {
+            width: 57px;
+            height: 57px;
+            display: inline-block;
+            background-color: #9d9d9d;
+            border-radius: 50%;
             text-align: center;
-            font-size: 45px;
-            font-weight: bold;
-            line-height: 100px;
-            background-color: #eb9316;
-        }
-
-        #aaa{
-            font-size: 24px;
+            line-height: 57px;
+            color: green;
+            margin: 13px 22px;
+            font-size: 20px;
+            opacity: .8;
+            cursor: pointer;
+            transition: all .5s ease-in;
+            left: 500px;
+            top: 300px;
         }
     </style>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../Bootstrap/css/bootstrap.min.css">
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="../../Bootstrap/js/jquery-3.5.1.min.js"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="../../Bootstrap/js/bootstrap.min.js"></script>
-    <script>
-        let number = 1;
-
-        function fun() {
-            number++;
-            if (number > 3) {
-                number = 1;
-            }
-            let img = document.getElementById("img");
-            img.src = "../../images/xx" + number + ".webp";
-        }
-        setInterval(fun, 5000);
-    </script>
+    <title>Title</title>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">学习之旅</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">个人笔记 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">我的心得</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">课程分类 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Java基础入门</a></li>
-                        <li><a href="#">Java Web</a></li>
-                        <li><a href="#">Web前端</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">数据结构</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">计算机网络</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <label>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">我的收藏❤</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">错题本 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">数据结构</a></li>
-                        <li><a href="#">操作系统</a></li>
-                        <li><a href="#">计算机网络</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">计算机组成原理</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div id="bgDIV">
     <div class="box">
-        <div class="left">
-            <a href="作业/10-九九乘法表.html">第一次作业</a>
-            <a href="作业/小学计算题.html">第二次作业</a>
-            <a href="作业/3D相册.html">第三次作业</a>
-            <a href="作业/11-百度换肤效果.html">第四次作业</a>
-            <a href="javascript:void(0);">第五次作业</a>
-            <a href="javascript:void(0);">第六次作业</a>
-            <a href="javascript:void(0);">第七次作业</a>
-            <a href="javascript:void(0);">第八次作业</a>
-            <a href="javascript:void(0);">第九次作业</a>
-            <a href="javascript:void(0);">第十次作业</a>
-            <a href="javascript:void(0);">第十一次作业</a>
-            <a href="javascript:void(0);">第十二次作业</a>
-            <a href="javascript:void(0);">第十三次作业</a>
-            <a href="javascript:void(0);">第十四次作业</a>
-            <a href="javascript:void(0);">第十五次作业</a>
-        </div>
-        <div class="right">
-            <img id="img" src="../../images/xx1.webp" alt="">
-        </div>
+        <ul></ul>
     </div>
 
-    <br/><br/>
-    <div class="box2">
-        <div class="lth1">
-            <img src="../../images/bc1.webp" alt="">
-            <p class="p1">C++是一种编程语言,它融合了3种不同的编程方式: C语言代表的过程性语言、 C++在C语言基础上添加的类代表的面向对象语言、 C++模板支...</p>
-            <p class="p2">C++之父：Bjarne Stroustrup</p>
-        </div>
-        <div class="lth2">
-            <img src="../../images/bc2.webp" alt="">
-            <p class="p1">Java是一门面向对象的编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和...</p>
-            <p class="p2">Java之父：James Gosling</p>
-        </div>
-        <div class="lth3">
-            <img src="../../images/bc3.webp" alt="">
-            <p class="p1">Python由荷兰数学和计算机科学研究学会的吉多·范罗苏姆于1990年代初设计，作为一门叫做ABC语言的替代品。Python提供了高效的高级数据结构...</p>
-            <p class="p2">Python之父：Guido van Rossum</p>
-        </div>
-        <div class="lth4">
-            <img src="../../images/bc4.webp" alt="">
-            <p class="p1">JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它...</p>
-            <p class="p2">JavaScript之父：BrendanEich</p>
-        </div>
-    </div>
+</div>
+<script src="作业/myBG.js"></script>
+<script>
+    const background = new MyBg({
+        faBoxId: 'bgDIV'
+    });
+    background.CanvasInit();
+</script>
+<script>
+    const arr = ['考','生','信','息',',','2020','3003','刘','天','浩','东','临','碣','石',',',
+        '以','观','沧','海','。','水','何','澹','澹',',','山','岛','竦','峙','。','树','木','丛','生',',','百','草','丰','茂','。'
+        ,'秋','风','萧','瑟',',','洪','波','涌','起','。','日','月','之','行',',','若','出','其','中','。','星','汉','灿','烂',',',
+        '若','出','其','里','。','幸','甚','至','哉',',','歌','以','咏','志','。'
+    ];
+    let ul = document.querySelector('ul');
+    for (let i = 0; i < arr.length ; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = arr[i];
+        ul.appendChild(li);
+    }
 
-    <br/><br/>
-    <div class="box3">
-        <video src="../../videos/video1.mp4" controls="controls"></video>
-        <div class="row">
-            <div>
-                <table id="lth" class="table table-bordered table-hover table-striped">
-                    <tr>
-                        <th id="aa" colspan="3" class="lead">学习计划</th>
-                    </tr>
-                    <tr id="aaa" class="info">
-                        <th>星期</th>
-                        <th>上午</th>
-                        <th>下午</th>
-                    </tr>
-                    <tr class="success">
-                        <td>星期一</td>
-                        <td>Java程序设计</td>
-                        <td>数据结构</td>
-                    </tr>
-                    <tr class="info">
-                        <td>星期二</td>
-                        <td>Java程序设计</td>
-                        <td>计算机网络</td>
-                    </tr>
-                    <tr class="success">
-                        <td>星期三</td>
-                        <td>Web前端基础</td>
-                        <td>Java程序设计</td>
-                    </tr>
-                    <tr class="info">
-                        <td>星期四</td>
-                        <td>操作系统</td>
-                        <td>软件工程</td>
-                    </tr>
-                    <tr class="success">
-                        <td>星期五</td>
-                        <td>Mysql数据库</td>
-                        <td>计算机组成原理</td>
-                    </tr>
-                </table>
-            </div>
-            </div>
-    </div>
+    let li = document.querySelectorAll('li');
+    setInterval(function () {
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.boxShadow = '0 0 10px #449d44';
+        }
+    },700);
+    setInterval(function () {
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.boxShadow = 'none';
+        }
+    },1000);
 
+    function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+    for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', function () {
+            for (let j = 0; j < li.length; j++) {
+                let random1 = getRandom(0, 800);
+                let random2 = getRandom(0, 600);
+                li[j].style.position = 'absolute';
+                li[j].style.left = random1 + 'px';
+                li[j].style.top = random2 + 'px';
+            }
+            setInterval(function () {
+                for (let j = 0; j < li.length; j++) {
+                    let random1 = getRandom(0, 800);
+                    let random2 = getRandom(0, 600);
+                    li[j].style.position = 'absolute';
+                    li[j].style.left = random1 + 'px';
+                    li[j].style.top = random2 + 'px';
+                }
+            },2000)
+
+            setInterval(function () {
+                location.reload();
+            },2000*4);
+        })
+    }
+</script>
 </body>
 </html>
