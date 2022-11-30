@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000000;
+            min-height: 98vh;
+            perspective: 1500px;
+        }
 
+        div#bgDIV {
+            width: 100vw;
+            height: 98vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .box {
+            width: 1015px;
+            height: 670px;
+            background-color: #222222;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px #ddd;
+            opacity: 0.7;
+        }
+        ul li {
+            list-style: none;
+            font-weight: bold;
+            width: 57px;
+            height: 57px;
+            display: inline-block;
+            background-color: #9d9d9d;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 57px;
+            color: green;
+            margin: 13px 22px;
+            font-size: 20px;
+            opacity: .8;
+            cursor: pointer;
+            transition: all .5s ease-in;
+            left: 500px;
+            top: 300px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div id="bgDIV">
+    <div class="box">
+        <ul></ul>
+    </div>
+
+</div>
+<script src="myBG.js"></script>
+<script>
+    const background = new MyBg({
+        faBoxId: 'bgDIV'
+    });
+    background.CanvasInit();
+</script>
+<script>
+    const arr = ['考','生','信','息',',','2020','3003','刘','天','浩','东','临','碣','石',',',
+        '以','观','沧','海','。','水','何','澹','澹',',','山','岛','竦','峙','。','树','木','丛','生',',','百','草','丰','茂','。'
+        ,'秋','风','萧','瑟',',','洪','波','涌','起','。','日','月','之','行',',','若','出','其','中','。','星','汉','灿','烂',',',
+        '若','出','其','里','。','幸','甚','至','哉',',','歌','以','咏','志','。'
+    ];
+    let ul = document.querySelector('ul');
+    for (let i = 0; i < arr.length ; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = arr[i];
+        ul.appendChild(li);
+    }
+
+    let li = document.querySelectorAll('li');
+    setInterval(function () {
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.boxShadow = '0 0 10px #449d44';
+        }
+    },700);
+    setInterval(function () {
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.boxShadow = 'none';
+        }
+    },1000);
+
+    function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+    for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', function () {
+            for (let j = 0; j < li.length; j++) {
+                let random1 = getRandom(0, 800);
+                let random2 = getRandom(0, 600);
+                li[j].style.position = 'absolute';
+                li[j].style.left = random1 + 'px';
+                li[j].style.top = random2 + 'px';
+            }
+            setInterval(function () {
+                for (let j = 0; j < li.length; j++) {
+                    let random1 = getRandom(0, 800);
+                    let random2 = getRandom(0, 600);
+                    li[j].style.position = 'absolute';
+                    li[j].style.left = random1 + 'px';
+                    li[j].style.top = random2 + 'px';
+                }
+            },2000)
+
+            setInterval(function () {
+                location.reload();
+            },2000*4);
+        })
+    }
+</script>
+</body>
+</html>
